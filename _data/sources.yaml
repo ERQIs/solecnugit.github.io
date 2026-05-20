@@ -1,3 +1,183 @@
+- title: "CDMF: A Cross-ISA Data Morphing Framework to Enhance Library ABI Compatibility in Static Binary Translation"
+  authors:
+    - Yilei Zhang
+    - Yinqiu Chen
+    - Jinrui Shi
+    - Jianmei Guo
+    - Bo Huang
+  type: paper
+  publisher: ACM Transactions on Architecture and Code Optimization
+  description: The use of standard libraries is a common practice in software development, highlighting the critical need to enhance library Application Binary Interface (ABI) compatibility across diverse Instruction Set Architectures (ISAs) in binary translation. While standard library functions’ Application Programming Interface (API) remains consistent across ISAs, their detailed implementations, particularly those involving composite data types, exhibit certain variations. These discrepancies result in ABI inconsistencies for identical function APIs across ISAs. Failure to resolve such ABI mismatches during binary translation can lead to misinterpretation of data passed via the ABI on the target ISA, ultimately causing application crashes. This paper introduces CDMF, a Cross-ISA Data Morphing Framework to enhance library ABI compatibility in static binary translation (SBT). CDMF automates the detection of cross-ISA library ABI incompatibilities, addressing challenges that previously demanded manual intervention. Our evaluation shows that integrating CDMF with EFACT_MC improves the translation success rates by 33.3% on SPEC CPU® 2006 C benchmarks. Furthermore, we present EC-SBT, a retargetable SBT enhanced by CDMF, which efficiently migrates x86_64 binaries to AArch64. Compared with Box64, EC-SBT is 1.74× faster on EEMBC and is 1.23× faster on SPEC CPU® 2006 C benchmarks, showcasing its efficiency.
+  date: 2026-05-08
+  image: images/publications/CDMF.jpg
+  buttons:
+    - type: website
+      link: https://dl.acm.org/doi/10.1145/3795140
+    - type: source
+      link: none
+  tags:
+    - cross-ISA data morphing
+    - library ABI compatibility
+    - polymorphic composite detection
+    - static binary translation
+    - reverse engineering
+  link: https://dl.acm.org/doi/10.1145/3795140
+
+- title: "Dr.avx: A Dynamic Compilation System for Seamlessly Executing Hardware-Unsupported Vectorization Instructions"
+  authors:
+    - Tang Yue
+    - Wu Mianzhi
+    - Li Yufeng
+    - Liao Haoyu
+    - Guo Jianmei
+    - Huang Bo
+  type: paper
+  publisher: 2026 IEEE/ACM International Symposium on Code Generation and Optimization
+  description: "Modern processors are breaking a fundamental rule: backward compatibility within their own ISA families. We term this Generational ISA Fragmentation (GIF), where newer processors cannot execute instructions supported by prior generations within the same ISA family. This phenomenon is exemplified by Intel's removal of AVX-512 from Alder Lake processors after years of deployment, ARM's inconsistent support for SVE across cores, and RISC-V's incompatible vector specifications. GIF causes illegal instruction crashes when running applications optimized for earlier processors on newer hardware, threatening the foundation of software portability that has underpinned decades of computing evolution. To address this, we present Dr.avx, a dynamic compilation system that enables seamless AVX-512 execution on hardware without AVX-512 support through instruction mirroring, AVX lowering, and scalar fallback strategies. Evaluation results show that Dr.avx outperforms Intel’s proprietary SDE across SPEC benchmarks, production databases, and LLM inference. By providing an open and extensible implementation, our work offers a practical remedy for AVX-512 fragmentation and a scalable blueprint for addressing GIF problems across all major ISAs."
+  date: 2026-3-1
+  image: images/publications/Dravx.jpg
+  buttons:
+    - type: website
+      link: https://ieeexplore.ieee.org/abstract/document/11394840
+    - type: source
+      link: https://solelab.tech/dev/dravx
+  tags:
+    -  ISA Compatibility
+    -  Dynamic Binary translation
+    -  AVX-512
+    -  SIMD
+  link: https://ieeexplore.ieee.org/abstract/document/11394840
+
+- title: "FlexInstru: A Flexible Instrumentation Framework for Tracing Long-Running Native Workloads"
+  authors:
+    - Wenlong Mu
+    - Ning Li
+    - Zimo Ji
+    - Jianmei Guo
+    - Bo Huang
+  type: paper
+  publisher: Journal of Systems and Software
+  description: "Understanding program runtime characteristics is crucial for tasks such as optimization and workload characterization. For long-running server-side workloads that execute as native binaries, effective profiling is essential to trace their complex runtime behaviors, enabling further optimizations to improve the reliability and efficiency of the delivered services. Widely adopted techniques for profiling these workloads include binary instrumentation and hardware-based profiling. Binary instrumentation is typically accurate but incurs high overhead and lacks flexibility for tracing long-running native workloads. Hardware-based profiling brings low overhead while requiring hardware support. To overcome these limitations, we present FlexInstru, a hardware-independent dynamic instrumentation framework based on the process attachment/detachment mechanism. FlexInstru can flexibly instrument a native application at any time and for any duration when the application is running, and achieve a good balance between instrumentation accuracy and overhead, which makes it particularly effective in tracing long-running native workloads."
+  date: 2025-12-12
+  image: images/publications/flexinstru.jpg
+  buttons:
+    - type: website
+      link: https://doi.org/10.1016/j.jss.2025.112739
+    - type: source
+      link: https://github.com/solecnugit/FlexInstru
+  tags:
+    - profiling
+    - tracing
+    - binary instrumentation
+    - BOLT optimization
+  link: https://doi.org/10.1016/j.jss.2025.112739
+
+- title: "Fragmentation Harmonization for the Arm Ecosystem: A Unified Method to Measure Memory Bandwidth via Network-on-Chip"
+  authors:
+    - Tong-yu Liu
+    - Huanlun Cheng
+    - Erqi E
+    - Ning Li
+    - Haoyu Liao
+    - Bo Huang
+    - Jianmei Guo
+  type: paper
+  publisher: ACM Transactions on Architecture and Code Optimization
+  description: "Arm-based platforms have significant hardware fragmentation issues due to the nature of Intellectual Property (IP) licensing. It is common for hardware vendors to customize memory controllers. Conventional memory bandwidth measurements based on memory controllers’ performance monitoring units (PMUs) face numerous obstacles, including the lack of kernel driver support and official documentation. To this end, we lift the perspective to the more general and upper level, i.e., the Network-on-Chip (NoC) level, instead of relying on various customized memory controllers. We propose a unified method for measuring memory bandwidth based on NoC traffic monitoring. Through a purely PMU-data-driven detection, our method can automatically reveal the hidden physical locations of memory controllers. By monitoring the upstream and downstream data traffic of the ports where memory controllers are connected on the NoC, our method can achieve accurate read and write memory bandwidth measurements without accessing memory controller PMUs, thus achieving fragmentation harmonization. We summarize all memory bandwidth methods currently applicable to Arm-based platforms and conduct a systematical evaluation. The experimental results show that our proposed method has an average error of 1.05% compared to the oracle answer, which can serve as a generic method to measure memory bandwidth for Arm-based SoCs with vendor-customized memory controllers."
+  date: 2025-10-21
+  image: images/publications/Harmonization.jpg
+  buttons:
+    - type: website
+      link: https://dl.acm.org/doi/10.1145/3772287
+    - type: source
+      link: https://github.com/solecnugit/paper-arm-mem-bw
+  tags:
+    - fragmentation harmonization
+    - memory bandwidth
+    - performance measurement
+    - hardware performance counter
+    - netswork-on-chip
+  link: https://dl.acm.org/doi/10.1145/3772287
+
+- title: "AOBO: A Fast-Switching Online Binary Optimizer on AArch64"
+  authors:
+    - Wenlong Mu
+    - Yue Tang
+    - Bo Huang
+    - Jianmei Guo
+  type: paper
+  publisher: ACM Transactions on Architecture and Code Optimization
+  description: "As the complexity of real-world server applications continues to grow, performance optimizations for large-scale applications are becoming increasingly challenging. The success of online optimization offered by OCOLOS and Dynimize proves that binary rewriting based on edge profiling data can significantly accelerate these applications. However, no similar online binary optimizer is currently available on the AArch64 platform. In response to the growing adoption of the AArch64 platform, this paper introduces AOBO, a fast-switching online binary optimizer specifically designed for AArch64. In addition to providing practical and efficient engineering support for AArch64-specific features, AOBO overcomes the challenge of lacking hardware counters for edge profiling on most commercially available AArch64 servers. In particular, AOBO embraces a novel edge weight estimation scheme to deliver more accurate edge estimation, which in turn allows AOBO’s binary rewriter to generate more efficient code. Furthermore, time spent on AOBO’s online code replacement stage is optimized to work at a subsecond level, thus enabling a fast switch from running the original binary to run the optimized one. We evaluate AOBO with CINT2017, GCC, MySQL and MongoDB, measuring the accuracy and coverage of the estimated edge weights, the performance improvements of the optimized binaries, and the online optimization cost. To make a fair comparison, we are using the performance data of the binaries generated by the default compilation scripts in the software packages as a baseline. Experimental data shows that AOBO can offer a more accurate edge weight estimation and generate binaries with superior performance. Furthermore, AOBO achieves online optimization with a very small overhead and significantly improves the performance of large-scale applications. Compared with the baselines, AOBO’s online optimization can achieve 24.7% and 31.11% performance improvement respectively for MySQL and MongoDB. Notably, application pause time is reduced from 1599.8 milliseconds to 462.1 milliseconds for MySQL, and from 1765.9 milliseconds to 507.1 milliseconds for MongoDB."
+  date: 2025-5-16
+  image: images/publications/AOBO.jpg
+  buttons:
+    - type: website
+      link: https://dl.acm.org/doi/10.1145/3736170
+    - type: source
+      link: https://github.com/solecnugit/AOBO
+  tags:
+    - post-link optimization
+    - code layout optimization
+    - online code replacement
+    - AArch64 instruction set architecture
+  link: https://dl.acm.org/doi/10.1145/3736170
+
+- title: "Retrospecting Available CPU Resources: SMT-Aware Scheduling to Prevent SLA Violations in Data Centers"
+  authors:
+    - Haoyu Liao
+    - Tong-yu Liu
+    - Jianmei Guo
+    - Bo Huang
+    - Dingyu Yang
+    - Jonathan Ding
+  type: paper
+  publisher: IEEE Transactions on Parallel and Distributed Systems
+  description: "The paper focuses on an understudied yet fundamental problem: existing methods typically average the utilization of multiple hardware threads to evaluate the available CPU resources. However, the approach could underestimate the actual usage of the underlying physical core for Simultaneous Multi-Threading (SMT) processors, leading to an overestimation of remaining resources. The overestimation propagates from microarchitecture to operating systems and cloud schedulers, which may misguide scheduling decisions, exacerbate CPU overcommitment, and increase Service Level Agreement (SLA) violations. To address the potential overestimation problem, we propose an SMT-aware and purely data-driven approach named Remaining CPU (RCPU) that reserves more CPU resources to restrict CPU overcommitment and prevent SLA violations. RCPU requires only a few modifications to the existing cloud infrastructures and can be scaled up to large data centers. Extensive evaluations in the data center proved that RCPU contributes to a reduction of SLA violations by 18% on average for 98% of all latency-sensitive applications. Under a benchmarking experiment, we prove that RCPU increases the accuracy by 69% in terms of Mean Absolute Error (MAE) compared to the state-of-the-art"
+  date: 2024-11-08
+  image: images/publications/RCPU.jpg
+  buttons:
+    - type: website
+      link: https://ieeexplore.ieee.org/document/10748366
+    - type: source
+      link: https://github.com/solecnugit/rcpu
+  tags:
+    - cloud computing
+    - data center
+    - latency-sensitive applications
+    - microarchitecture
+    - QoS
+    - SMT interference
+  link: https://ieeexplore.ieee.org/document/10748366
+
+- title: "DeployFix: Dynamic Repair of Software Deployment Failures via Constraint Solving"
+  authors:
+    - Haoyu Liao
+    - Jianmei Guo
+    - Bo Huang
+    - Yujie Han
+    - Dingyu Yang
+    - Kai Shi
+    - Jonathan Ding
+    - Guoyao Xu
+    - Guodong Yang
+    - Liping Zhang
+  type: paper
+  publisher: (ASE'24) Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering
+  description: Software deployment misconfiguration often happens and has been one of the major causes of deployment failures that give rise to service interruptions. However, there is currently no existing approach to automatically repairing deployment failures. We propose DeployFix, which automatically repairs software deployment failures via constraint solving in the dynamic-changing deployment environments. DeployFix first defines DeployIR as a unified intermediate representation to achieve the translation of heterogeneous specifications from different schedulers with different syntaxes. By reducing the root-cause analysis of deployment failures to the conflict resolution in propositional logic, DeployFix uses off-the-shelf constraint solvers to achieve automatic localization and diagnosis of conflicting constraints, which are the root causes of deployment failures. DeployFix finally resolves the conflicting constraints and generates repaired deployment configurations in terms of practical requirements. We evaluate DeployFix in both simulation and production environments with tens of thousands of nodes at Alibaba, on which tens of thousands of applications are running guided by hundreds of thousands of deployment constraints. Experimental results demonstrate that DeployFix outperforms the state of the art and it correctly repairs the deployment failures in minutes, even in a large production data center.
+  date: 2024-10-27
+  image: images/publications/deployfix.png
+  buttons:
+    - type: website
+      link: https://dl.acm.org/doi/10.1145/3691620.3695268
+    - type: source
+      link: https://github.com/solecnugit/deployfix
+  tags:
+    - cloud computing
+    - deployment failures
+    - dynamic repair
+    - constraint solving
+  link: https://dl.acm.org/doi/10.1145/3691620.3695268
+
 - title: "EFACT: An External Function Auto-Completion Tool to strengthen static binary lifting"
   authors:
     - Yilei Zhang
@@ -16,12 +196,12 @@
     - type: source
       link: https://github.com/solecnugit/EFACT
   tags:
-    - External function completion
-    - Binary lifting
-    - Static binary translation
-    - Reverse engineering
+    - external function completion
+    - binary lifting
+    - static binary translation
+    - reverse engineering
   link: https://www.sciencedirect.com/science/article/pii/S0164121224001377
-  
+
 - title: Efficient Cross-platform Multiplexing of Hardware Performance Counters via Adaptive Grouping
   authors:
     - Tong-Yu Liu
@@ -47,7 +227,7 @@
   authors:
     - Ning Li
     - Jianmei Guo
-    - Bo Huang 
+    - Bo Huang
     - Yuyang Li
     - Yilei Zhang
     - Chengdong Li

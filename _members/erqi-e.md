@@ -1,7 +1,7 @@
 ---
 name: Erqi
 image: images/members/erqi-e.jpg
-role: undergraduatestu
+role: alumni
 grade: 2022
 description: 
 links:
